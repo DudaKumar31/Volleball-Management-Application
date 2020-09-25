@@ -10,7 +10,7 @@ import com.volleyball.activities.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static int time_out=1500;
+    private static int time_out=3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

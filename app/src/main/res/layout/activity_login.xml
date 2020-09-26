@@ -2,17 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#292522"
+    android:background="@drawable/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/log"
+        />
 
     <TextView
         android:id="@+id/tv_sign_in"
         android:text="Sign-In"
+        android:textStyle="bold"
         android:textSize="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_45sdp"
+
         android:layout_marginLeft="@dimen/_15sdp"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -22,7 +30,7 @@
         android:textSize="@dimen/_12sdp"
         android:layout_gravity="right"
         android:layout_margin="@dimen/_10sdp"
-        android:textColor="#38a4d0"
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -87,10 +95,10 @@
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp"
         android:textAllCaps="false"
-        android:textColor="#333333"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_38sdp"
-        android:background="@drawable/button1_rounded" />
+        android:background="#000" />
 
     <TextView
         android:id="@+id/tv_terms_cond"
@@ -109,6 +117,7 @@
         android:id="@+id/tv_new_member"
         android:layout_gravity="center"
         android:text="New to this app"
+        android:visibility="gone"
         android:layout_marginTop="@dimen/_15sdp"
         android:textSize="@dimen/_15sdp"
         android:textColor="#9A8F8F"
@@ -118,6 +127,7 @@
 
     <Button
         android:id="@+id/btn_create_one"
+        android:visibility="gone"
         android:text="Register Here"
         android:layout_marginTop="@dimen/_18sdp"
         android:layout_marginLeft="@dimen/_10sdp"
@@ -132,14 +142,14 @@
     <Button
         android:id="@+id/btn_guest"
         android:text="Guest User"
-        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp"
         android:textAllCaps="false"
-        android:textColor="#333333"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_38sdp"
-        android:background="@drawable/button1_rounded" />
+        android:background="#000" />
 
 
 

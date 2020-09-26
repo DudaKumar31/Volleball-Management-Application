@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cd_create_seasons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/tv_create_seasons"
+            android:background="#FFFFFF"
+            android:text="Create Seasons"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cd_create_managers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/tv_create_managers"
+            android:background="#FFFFFF"
+            android:text="Create Managers"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cd_create_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/tv_create_team"
+            android:background="#FFFFFF"
+            android:text="Create Teams"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cd_manage_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/tv_manage_player"
+            android:background="#FFFFFF"
+            android:text="Manage Players"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:background="#FFFFFF"
+            android:text="Schedule Matches"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_stat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/tv_about_us"
+            android:background="#FFFFFF"
+            android:text="Manage Statistic"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cd_manage_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:background="#FFFFFF"
+            android:text="Manage News"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cd_manage_rank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
+
+        <TextView
+            android:background="#FFFFFF"
+            android:text="Manage Ranking"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:padding="@dimen/_8sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

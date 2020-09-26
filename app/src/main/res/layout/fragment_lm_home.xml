@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/bg"
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cd_create_seasons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,22 +18,21 @@
 
         <TextView
             android:id="@+id/tv_create_seasons"
-            android:background="#FFFFFF"
-            android:text="Create Seasons"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="@dimen/_15sdp"
-            android:padding="@dimen/_8sdp"
-            android:drawablePadding="@dimen/_10sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#504D4D"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Create Seasons"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_15sdp" />
 
     </androidx.cardview.widget.CardView>
 
 
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cd_create_managers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,22 +45,21 @@
 
         <TextView
             android:id="@+id/tv_create_managers"
-            android:background="#FFFFFF"
-            android:text="Create Managers"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="@dimen/_15sdp"
-            android:padding="@dimen/_8sdp"
-            android:drawablePadding="@dimen/_10sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#504D4D"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Create Managers"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_15sdp" />
 
     </androidx.cardview.widget.CardView>
 
 
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cd_create_team"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,15 +72,16 @@
 
         <TextView
             android:id="@+id/tv_create_team"
-            android:background="#FFFFFF"
-            android:text="Create Teams"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="@dimen/_15sdp"
-            android:padding="@dimen/_8sdp"
-            android:drawablePadding="@dimen/_10sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#504D4D"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Create Teams"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_15sdp" />
 
     </androidx.cardview.widget.CardView>
 

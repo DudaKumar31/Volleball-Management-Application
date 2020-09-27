@@ -28,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView tv_sign_in,tv_forgot_pass,tv_terms_cond;
+    TextView tv_sign_in,tv_forgot_pass;
     Button btn_login,btn_guest;
     TextInputEditText et_uname,et_pwd;
     ProgressDialog pd;
@@ -56,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
 
         tv_sign_in=(TextView)findViewById(R.id.tv_sign_in);
         tv_forgot_pass=(TextView)findViewById(R.id.tv_forgot_pass);
-        tv_terms_cond=(TextView)findViewById(R.id.tv_terms_cond);
 
 
         et_uname=(TextInputEditText)findViewById(R.id.et_uname);

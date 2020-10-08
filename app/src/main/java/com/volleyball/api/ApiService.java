@@ -3,6 +3,7 @@ package com.volleyball.api;
 
 
 import com.volleyball.models.GetAllSeasonsPojo;
+import com.volleyball.models.GetAllTeamsPojo;
 import com.volleyball.models.ResponseData;
 
 import java.util.List;
@@ -41,10 +42,17 @@ public interface ApiService {
 
     @GET("/Volleyball/getseasons.php?")
     Call<List<GetAllSeasonsPojo>> getseasons();
+    @GET("/Volleyball/getteams.php?")
+    Call<List<GetAllTeamsPojo>> getteams();
 
     @GET("/Volleyball/deleteseason.php?")
     Call<ResponseData> deleteseason(
             @Query("id") String id
 
     );
+    @GET("Volleyball/deleteTeam.php")
+    Call<ResponseData> deleteTeam(
+            @Query("id") String id
+    );
+
 }

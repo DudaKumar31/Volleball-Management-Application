@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.volleyball.CreateTeamActivity;
 import com.volleyball.R;
 import com.volleyball.activities.AllSeasonsActivity;
+import com.volleyball.activities.AllTeamsActivity;
 import com.volleyball.activities.CreateManagersActivity;
 import com.volleyball.activities.CreateSeasonsActivity;
 import com.volleyball.activities.LoginActivity;
@@ -63,7 +64,7 @@ public class LMHomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(getContext(), CreateTeamActivity.class);
+                Intent intent=new Intent(getContext(), AllTeamsActivity.class);
                 startActivity(intent);
             }
         });

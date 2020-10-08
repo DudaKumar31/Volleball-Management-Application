@@ -2,8 +2,10 @@ package com.volleyball.api;
 
 
 
+import com.volleyball.models.GetAllSeasonsPojo;
 import com.volleyball.models.ResponseData;
 
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.MultipartBody;
@@ -37,4 +39,12 @@ public interface ApiService {
             @PartMap Map<String, String> partMap
     );
 
+    @GET("/Volleyball/getseasons.php?")
+    Call<List<GetAllSeasonsPojo>> getseasons();
+
+    @GET("/Volleyball/deleteseason.php?")
+    Call<ResponseData> deleteseason(
+            @Query("id") String id
+
+    );
 }

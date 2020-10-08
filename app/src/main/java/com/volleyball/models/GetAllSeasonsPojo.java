@@ -27,6 +27,16 @@ public class GetAllSeasonsPojo {
     @SerializedName("s_logo")
     private String s_logo;
 
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
+
+    @SerializedName("Id")
+    private String Id;
 
 
 }

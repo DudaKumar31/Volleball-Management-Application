@@ -17,6 +17,7 @@
         <activity android:name=".activities.EditTeamsActivity"></activity>
         <activity android:name=".activities.CreateTeamActivity" />
         <activity android:name=".activities.AllTeamsActivity" />
+        <activity android:name=".activities.AllSeasonsActivity" />
         <activity android:name=".activities.EditSeasonsActivity" />
         <activity android:name=".activities.CreateManagersActivity" />
         <activity android:name=".activities.CreateSeasonsActivity" />

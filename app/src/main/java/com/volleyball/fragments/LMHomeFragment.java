@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.volleyball.R;
+import com.volleyball.activities.AllManagersActivity;
 import com.volleyball.activities.AllSeasonsActivity;
 import com.volleyball.activities.AllTeamsActivity;
 import com.volleyball.activities.CreateManagersActivity;
@@ -53,7 +54,7 @@ public class LMHomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(getContext(), CreateManagersActivity.class);
+                Intent intent=new Intent(getContext(), AllManagersActivity.class);
                 startActivity(intent);
             }
         });

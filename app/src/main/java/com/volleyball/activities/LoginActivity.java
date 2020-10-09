@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     public  void leagueManagerloginData() {
         pd= new ProgressDialog(LoginActivity.this);
-        pd.setTitle("Please wait,Data is being submit...");
+        pd.setTitle("Please wait, data is being submit...");
         pd.show();
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
         Call<ResponseData> call = apiService.adminLogin(et_uname.getText().toString(),et_pwd.getText().toString());

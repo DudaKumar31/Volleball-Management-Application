@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.GetAllSeasonsActivity"/>
+        <activity android:name=".activities.EditManagerssActivity"></activity>
+        <activity android:name=".activities.AllManagersActivity" />
+        <activity android:name=".activities.GetAllSeasonsActivity" />
         <activity android:name=".activities.EditTeamsActivity" />
         <activity android:name=".activities.CreateTeamActivity" />
         <activity android:name=".activities.AllTeamsActivity" />

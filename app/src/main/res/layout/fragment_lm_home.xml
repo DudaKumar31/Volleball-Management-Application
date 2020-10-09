@@ -30,7 +30,31 @@
             android:textSize="@dimen/_15sdp" />
 
     </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cd_create_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        card_view:cardCornerRadius="@dimen/_2sdp"
+        card_view:cardElevation="@dimen/_2sdp"
+        card_view:cardUseCompatPadding="true">
 
+        <TextView
+            android:id="@+id/tv_create_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#504D4D"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Create Teams"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_15sdp" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cd_create_managers"
@@ -58,32 +82,6 @@
 
     </androidx.cardview.widget.CardView>
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cd_create_team"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_6sdp"
-        android:layout_marginRight="@dimen/_6sdp"
-        card_view:cardCornerRadius="@dimen/_2sdp"
-        card_view:cardElevation="@dimen/_2sdp"
-        card_view:cardUseCompatPadding="true">
-
-        <TextView
-            android:id="@+id/tv_create_team"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#504D4D"
-            android:drawablePadding="@dimen/_10sdp"
-            android:gravity="center"
-            android:padding="@dimen/_8sdp"
-            android:text="Create Teams"
-            android:textColor="#ffffff"
-            android:textSize="@dimen/_15sdp" />
-
-    </androidx.cardview.widget.CardView>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

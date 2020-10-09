@@ -14,13 +14,18 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.volleyball.R;
 import com.volleyball.api.ApiService;
+import com.volleyball.api.RetroClient;
 import com.volleyball.models.ResponseData;
+import com.volleyball.models.TeamsPojo;
 
 import java.io.File;
 import java.util.HashMap;
@@ -46,11 +51,16 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
     private static final String SERVER_PATH = "http://cegepvolleyleagues.com/";
     private Uri uri;
     ProgressDialog pd;
+    Spinner spin_teams;
+    List<TeamsPojo> a2;
+    String[] teams;
+    String[] ids;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_managers);
+        getTeams();
         getSupportActionBar().setTitle("Create Managers");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -59,6 +69,7 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
         et_email=(EditText)findViewById(R.id.et_email);
         et_phno=(EditText)findViewById(R.id.et_phno);
         et_pwd=(EditText)findViewById(R.id.et_pwd);
+        spin_teams=(Spinner)findViewById(R.id.spin_teams);
 
         btn_Upload_img=(Button)findViewById(R.id.btn_Upload_img);
         btn_Submit=(Button)findViewById(R.id.btn_Submit);
@@ -134,6 +145,7 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
         map.put("email",et_email.getText().toString());
         map.put("phone",et_phno.getText().toString());
         map.put("password",et_pwd.getText().toString());
+        map.put("tid",ids[spin_teams.getSelectedItemPosition()]);
 
 
         RequestBody mFile = RequestBody.create(MediaType.parse("image/*"), file);
@@ -170,6 +182,45 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void getTeams() {
+        ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
+        Call<List<TeamsPojo>> call = apiService.getavailableteamsspinner();
+        call.enqueue(new Callback<List<TeamsPojo>>() {
+            @Override
+            public void onResponse(Call<List<TeamsPojo>> call, Response<List<TeamsPojo>> response) {
+                a2 = response.body();
+                Log.d("TAG", "Response = " + a2);
+                teams = new String[a2.size() + 1];
+                ids = new String[a2.size() + 1];
+                teams[0] = "Select Teams";
+                ids[0] = "-1";
+                for (int i = 0; i < a2.size(); i++) {
+                    teams[i + 1] = a2.get(i).getT_name();
+                    ids[i + 1] = a2.get(i).getTeam_id();
+                }
+                ArrayAdapter aa = new ArrayAdapter(CreateManagersActivity.this, android.R.layout.simple_spinner_item, teams);
+                aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spin_teams.setAdapter(aa);
+                spin_teams.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                        if (pos > 0) {
+                        }
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(Call<List<TeamsPojo>> call, Throwable t) {
+                Log.d("TAG", "Response = " + t.toString());
+            }
+        });
     }
 
 }

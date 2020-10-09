@@ -15,7 +15,27 @@
         android:textColor="#111111"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Spinner
+        android:id="@+id/spin_teams"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/edit_text_rounded"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:spinnerMode="dropdown"/>
 
+    <TextView
+        android:text="Name"
+        android:textSize="16dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textColor="#111111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/et_name"
@@ -119,17 +139,16 @@
         android:background="#000" />
 
 
-
     <Button
         android:id="@+id/btn_Submit"
-        android:text="Submit"
-        android:layout_marginTop="@dimen/_40sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_38sdp"
-        android:background="#000" />
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="#000"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

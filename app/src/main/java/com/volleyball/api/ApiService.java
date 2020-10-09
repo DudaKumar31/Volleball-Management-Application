@@ -6,6 +6,7 @@ import com.volleyball.models.GetAllManagersPojo;
 import com.volleyball.models.GetAllSeasonsPojo;
 import com.volleyball.models.GetAllTeamsPojo;
 import com.volleyball.models.ResponseData;
+import com.volleyball.models.TeamsPojo;
 
 import java.util.List;
 import java.util.Map;
@@ -86,5 +87,8 @@ public interface ApiService {
             @Query("id") String id
 
     );
+    @GET("/Volleyball/getteamsformanagers.php")
+    Call<List<TeamsPojo>> getavailableteamsspinner();
+
 
 }

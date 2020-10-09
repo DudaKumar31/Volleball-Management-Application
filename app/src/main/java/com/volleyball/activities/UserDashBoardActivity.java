@@ -10,9 +10,9 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.volleyball.R;
+import com.volleyball.fragments.GuestMoreFragment;
 import com.volleyball.fragments.HomeFragment;
 import com.volleyball.fragments.MatchesFragment;
-import com.volleyball.fragments.MoreFragment;
 import com.volleyball.fragments.NewsFragment;
 
 public class UserDashBoardActivity extends AppCompatActivity {
@@ -43,7 +43,7 @@ public class UserDashBoardActivity extends AppCompatActivity {
                                 selectedFragment = NewsFragment.newsFragment();
                                 break;
                             case R.id.item_settings:
-                                selectedFragment = MoreFragment.moreFragment();
+                                selectedFragment = GuestMoreFragment.guestMoreFragment();
                                 break;
                         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

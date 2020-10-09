@@ -40,6 +40,15 @@ public interface ApiService {
             @PartMap Map<String, String> partMap
     );
 
+    @Multipart
+    @POST("Volleyball/editseason.php")
+    Call<ResponseData> editseason(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+
+    );
+
+
     @GET("/Volleyball/getseasons.php?")
     Call<List<GetAllSeasonsPojo>> getseasons();
     @GET("/Volleyball/getteams.php?")

@@ -94,6 +94,14 @@ public interface ApiService {
             @Query("id") String id
 
     );
+
+    @Multipart
+    @POST("Volleyball/editmanager.php?")
+    Call<ResponseData> editmanager(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+
+    );
     @GET("/Volleyball/getteamsformanagers.php")
     Call<List<TeamsPojo>> getavailableteamsspinner();
 

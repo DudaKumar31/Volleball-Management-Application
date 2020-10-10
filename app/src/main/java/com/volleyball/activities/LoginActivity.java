@@ -148,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
                     et.putString("uname",et_uname.getText().toString());
                     et.commit();
                     Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(LoginActivity.this, LeagueManagerDashBoardActivity.class));
+                    startActivity(new Intent(LoginActivity.this, TeamManagerDashBoardActivity.class));
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();

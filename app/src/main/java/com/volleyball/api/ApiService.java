@@ -7,6 +7,7 @@ import com.volleyball.models.GetAllSeasonsPojo;
 import com.volleyball.models.GetAllTeamsPojo;
 import com.volleyball.models.ResponseData;
 import com.volleyball.models.TeamsPojo;
+import com.volleyball.models.TmProfilePojo;
 
 import java.util.List;
 import java.util.Map;
@@ -105,5 +106,16 @@ public interface ApiService {
     @GET("/Volleyball/getteamsformanagers.php")
     Call<List<TeamsPojo>> getavailableteamsspinner();
 
+    @GET("/Volleyball/getmymanagerprofile.php?")
+    Call<List<TmProfilePojo>> getmymanagerprofile(@Query("email") String email);
+
+
+    @Multipart
+    @POST("Volleyball/updatemanagerprofile.php?")
+    Call<ResponseData> updatemanagerprofile(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+
+    );
 
 }

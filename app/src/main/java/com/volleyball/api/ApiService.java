@@ -75,6 +75,13 @@ public interface ApiService {
             @PartMap Map<String, String> partMap
 
     );
+    @Multipart
+    @POST("Volleyball/addingmanager.php?")
+    Call<ResponseData> addingmanager(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+
+    );
     @GET("Volleyball/deleteTeam.php")
     Call<ResponseData> deleteTeam(
             @Query("id") String id

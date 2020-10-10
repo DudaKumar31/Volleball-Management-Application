@@ -156,7 +156,7 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService uploadImage = retrofit.create(ApiService.class);
-        Call<ResponseData> fileUpload = uploadImage.addseasons(fileToUpload, map);
+        Call<ResponseData> fileUpload = uploadImage.addingmanager(fileToUpload, map);
         fileUpload.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {

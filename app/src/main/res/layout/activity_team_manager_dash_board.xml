@@ -26,8 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/colorPrimary"
-            app:itemIconTint="@color/nav_item_state_list"
-            app:itemTextColor="@color/nav_item_state_list"
+            app:itemIconTint="#131313"
+            app:itemTextColor="#131313"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/team_manag_navigation_items" />
 

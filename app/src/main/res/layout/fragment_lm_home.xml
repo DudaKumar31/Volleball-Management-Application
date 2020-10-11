@@ -82,17 +82,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textColor="#ffffff"
-        android:background="#504D4D"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_6sdp"
-        android:layout_marginRight="@dimen/_6sdp"
-        android:id="@+id/btn_logout"
-        />
 
 
 </LinearLayout>

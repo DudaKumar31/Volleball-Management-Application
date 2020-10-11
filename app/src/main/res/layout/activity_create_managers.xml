@@ -7,7 +7,7 @@
     android:background="@drawable/bg">
 
     <TextView
-        android:text="Name"
+        android:text="Team Name"
         android:textSize="16dp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_gravity="left"

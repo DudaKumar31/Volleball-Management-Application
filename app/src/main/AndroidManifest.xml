@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AddPlayerActivity"></activity>
+        <activity android:name=".activities.AllScheduleActivity"></activity>
+        <activity android:name=".activities.AddPlayerActivity" />
         <activity android:name=".activities.TMEditProfileActivity" />
         <activity android:name=".activities.TeamManagerDashBoardActivity" />
         <activity android:name=".activities.EditManagerssActivity" />

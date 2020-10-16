@@ -18,13 +18,14 @@ import androidx.fragment.app.Fragment;
 
 import com.volleyball.R;
 import com.volleyball.activities.AllManagersActivity;
+import com.volleyball.activities.AllScheduleActivity;
 import com.volleyball.activities.AllSeasonsActivity;
 import com.volleyball.activities.AllTeamsActivity;
 import com.volleyball.activities.CreateManagersActivity;
 import com.volleyball.activities.LoginActivity;
 
 public class LMHomeFragment extends Fragment {
-    CardView cd_create_seasons,cd_create_managers,cd_create_team;
+    CardView cd_create_seasons,cd_create_managers,cd_create_team,card_schedule;
     View view;
 
 
@@ -43,6 +44,7 @@ public class LMHomeFragment extends Fragment {
         cd_create_seasons=(CardView)view.findViewById(R.id.cd_create_seasons);
         cd_create_managers=(CardView)view.findViewById(R.id.cd_create_managers);
         cd_create_team=(CardView)view.findViewById(R.id.cd_create_team);
+        card_schedule=(CardView)view.findViewById(R.id.card_schedule);
         cd_create_seasons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +67,14 @@ public class LMHomeFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent intent=new Intent(getContext(), AllTeamsActivity.class);
+                startActivity(intent);
+            }
+        });
+        card_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(getContext(), AllScheduleActivity.class);
                 startActivity(intent);
             }
         });

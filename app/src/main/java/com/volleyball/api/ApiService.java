@@ -3,6 +3,7 @@ package com.volleyball.api;
 
 
 import com.volleyball.models.GetAllManagersPojo;
+import com.volleyball.models.GetAllSchedulePojo;
 import com.volleyball.models.GetAllSeasonsPojo;
 import com.volleyball.models.GetAllTeamsPojo;
 import com.volleyball.models.ResponseData;
@@ -87,11 +88,19 @@ public interface ApiService {
     Call<ResponseData> deleteTeam(
             @Query("id") String id
     );
+    @GET("/Volleyball/gettestschedule.php?")
+    Call<List<GetAllSchedulePojo>> gettestschedule();
+
     @GET("/Volleyball/getmanagers.php?")
     Call<List<GetAllManagersPojo>> getmanagers();
 
     @GET("/Volleyball/deletemanager.php?")
     Call<ResponseData> deletemanager(
+            @Query("id") String id
+
+    );
+    @GET("/Volleyball/deleteplayer.php?")
+    Call<ResponseData> deleteplayer(
             @Query("id") String id
 
     );

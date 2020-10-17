@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AllPlayersActivity"></activity>
+        <activity android:name=".activities.AllNewsActivity"></activity>
+        <activity android:name=".activities.AllPlayersActivity" />
         <activity android:name=".activities.AddResultsActivity" />
         <activity android:name=".activities.AddScheduleActivity" />
         <activity android:name=".activities.AllScheduleActivity" />

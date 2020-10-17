@@ -146,7 +146,8 @@ public class CreateSeasonsActivity extends AppCompatActivity implements EasyPerm
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 Toast.makeText(CreateSeasonsActivity.this, response.body().message, Toast.LENGTH_LONG).show();
-                //finish();
+                startActivity(new Intent(CreateSeasonsActivity.this,AllSeasonsActivity.class));
+                finish();
             }
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {

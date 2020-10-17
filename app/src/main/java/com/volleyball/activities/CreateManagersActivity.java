@@ -162,7 +162,8 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 Toast.makeText(CreateManagersActivity.this, response.body().message, Toast.LENGTH_LONG).show();
-                //finish();
+                startActivity(new Intent(CreateManagersActivity.this,AllManagersActivity.class));
+                finish();
             }
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {

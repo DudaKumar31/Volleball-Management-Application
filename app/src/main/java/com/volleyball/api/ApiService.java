@@ -127,4 +127,20 @@ public interface ApiService {
 
     );
 
+    @GET("Volleyball/addtestschedule.php?")
+    Call<ResponseData> addSchedule(
+            @Query("t1_id") String t1_id,
+            @Query("t1_name") String t1_name,
+            @Query("t1_logo") String t1_logo,
+            @Query("t2_id") String t2_id,
+            @Query("t2_name") String t2_name,
+            @Query("t2_logo") String t2_logo,
+            @Query("schedule_date") String schedule_date,
+            @Query("season") String season
+    );
+
+    @GET("/Volleyball/getteams.php")
+    Call<List<TeamsPojo>> getmatchteams();
+
+
 }

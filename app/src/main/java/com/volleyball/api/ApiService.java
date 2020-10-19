@@ -141,6 +141,9 @@ public interface ApiService {
 
     @GET("/Volleyball/getteams.php")
     Call<List<TeamsPojo>> getmatchteams();
+    @GET("/Volleyball/gettestschedule.php?")
+    Call<List<GetAllSchedulePojo>> getMatchResults();
+
 
 
 }

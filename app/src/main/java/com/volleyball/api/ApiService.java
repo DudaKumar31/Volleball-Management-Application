@@ -52,6 +52,13 @@ public interface ApiService {
             @PartMap Map<String, String> partMap
 
     );
+    @Multipart
+    @POST("Volleyball/addplayer.php?")
+    Call<ResponseData> addplayer(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+
+    );
 
 
     @GET("/Volleyball/getseasons.php?")
@@ -62,6 +69,10 @@ public interface ApiService {
 
     @GET("/Volleyball/getteams.php?")
     Call<List<GetAllTeamsPojo>> getteams();
+
+    @GET("/Volleyball/getteams.php")
+    Call<List<TeamsPojo>> getteamsspinner();
+
 
     @GET("/Volleyball/deleteseason.php?")
     Call<ResponseData> deleteseason(

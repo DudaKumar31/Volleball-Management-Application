@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:background="@drawable/bg"
     android:layout_height="match_parent">
-
-    <TextView
-        android:textSize="@dimen/_23sdp"
-        android:fontFamily="sans-serif-black"
-        android:text="Coming Soon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_margin="10dp"
+        android:divider="@null"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+</RelativeLayout>

@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AddNewsActivity"></activity>
+        <activity android:name=".activities.EditPlayerActivity"></activity>
+        <activity android:name=".activities.AddNewsActivity" />
         <activity android:name=".activities.TeamScoreDetailsActivity" />
         <activity android:name=".activities.AllNewsActivity" />
         <activity android:name=".activities.AllPlayersActivity" />

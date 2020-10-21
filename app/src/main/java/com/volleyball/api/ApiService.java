@@ -7,6 +7,7 @@ import com.volleyball.models.GetAllNewsPojo;
 import com.volleyball.models.GetAllSchedulePojo;
 import com.volleyball.models.GetAllSeasonsPojo;
 import com.volleyball.models.GetAllTeamsPojo;
+import com.volleyball.models.PlayerPojo;
 import com.volleyball.models.ResponseData;
 import com.volleyball.models.TeamsPojo;
 import com.volleyball.models.TmProfilePojo;
@@ -60,6 +61,9 @@ public interface ApiService {
 
     );
 
+
+    @GET("/Volleyball/getplayer.php?")
+    Call<List<PlayerPojo>> getplayer();
 
     @GET("/Volleyball/getseasons.php?")
     Call<List<GetAllSeasonsPojo>> getseasons();

@@ -166,8 +166,16 @@ public interface ApiService {
             @Query("season") String season
     );
 
+    @GET("/Volleyball/addmatchresult.php")
+    Call<ResponseData> addTeamResultScore(
+            @Query("s_id") String s_id,
+            @Query("team1_score") String team1_score,
+            @Query("team2_score") String team2_score,
+            @Query("result") String result);
+
     @GET("/Volleyball/getteams.php")
     Call<List<TeamsPojo>> getmatchteams();
+
     @GET("/Volleyball/gettestschedule.php?")
     Call<List<GetAllSchedulePojo>> getMatchResults();
 

@@ -119,6 +119,13 @@ public interface ApiService {
             @Query("id") String id
 
     );
+
+    @GET("/Volleyball/deletenews.php?")
+    Call<ResponseData> deletenews(
+            @Query("id") String id
+
+    );
+
     @GET("/Volleyball/deleteplayer.php?")
     Call<ResponseData> deleteplayer(
             @Query("id") String id

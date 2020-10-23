@@ -16,12 +16,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.volleyball.R;
+import com.volleyball.activities.AllNewsActivity;
 import com.volleyball.activities.AllSeasonsActivity;
-import com.volleyball.activities.EditSeasonsActivity;
+import com.volleyball.activities.NewsDetailsActivity;
 import com.volleyball.api.ApiService;
 import com.volleyball.api.RetroClient;
 import com.volleyball.models.GetAllNewsPojo;
-import com.volleyball.models.GetAllSeasonsPojo;
 import com.volleyball.models.ResponseData;
 
 import java.util.List;
@@ -63,25 +63,21 @@ public class AllNewsAdapter extends BaseAdapter {
         ImageView iv_image_view=(ImageView)obj2.findViewById(R.id.iv_image_view);
         Glide.with(cnt).load(getAllNewsPojos.get(pos).getImage()).into(iv_image_view);
 
-        TextView tv_descriptiop=(TextView)obj2.findViewById(R.id.tv_descriptiop);
-        tv_descriptiop.setText(getAllNewsPojos.get(pos).getMsg());
-
         TextView tv_title=(TextView)obj2.findViewById(R.id.tv_title);
         tv_title.setText(getAllNewsPojos.get(pos).getTitle());
 
 
-
-        /*final ImageView im_edit=(ImageView)obj2.findViewById(R.id.im_edit);
-        im_edit.setOnClickListener(new View.OnClickListener() {
+        iv_image_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent=new Intent(cnt, EditSeasonsActivity.class);
-                intent.putExtra("name",getAllNewsPojos.get(pos).getTitle());
+                Intent intent=new Intent(cnt, NewsDetailsActivity.class);
+                intent.putExtra("title",getAllNewsPojos.get(pos).getTitle());
                 intent.putExtra("image",getAllNewsPojos.get(pos).getImage());
                 intent.putExtra("id",getAllNewsPojos.get(pos).getId());
+                intent.putExtra("description",getAllNewsPojos.get(pos).getMsg());
                 cnt.startActivity(intent);
-                ((Activity)cnt).finish();
+                //((Activity)cnt).finish();
+
             }
         });
 
@@ -89,14 +85,13 @@ public class AllNewsAdapter extends BaseAdapter {
         im_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(cnt, "Delete Option Clicked"+getAllSeasonsPojo.get(pos).getId(), Toast.LENGTH_SHORT).show();
-               // serverData(getAllSeasonsPojo.get(pos).getId());
+
                 alertDioluge(getAllNewsPojos.get(pos).getId());
 
 
 
             }
-        });*/
+        });
 
         return obj2;
     }
@@ -106,7 +101,7 @@ public class AllNewsAdapter extends BaseAdapter {
         progressDialog.setMessage("Loading....");
         progressDialog.show();
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = service.deleteseason(id);
+        Call<ResponseData> call = service.deletenews(id);
         call.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
@@ -114,7 +109,7 @@ public class AllNewsAdapter extends BaseAdapter {
                 if(response.body()==null){
                     Toast.makeText(cnt,"Server issue",Toast.LENGTH_SHORT).show();
                 }else {
-                    cnt.startActivity(new Intent(cnt, AllSeasonsActivity.class));
+                    cnt.startActivity(new Intent(cnt, AllNewsActivity.class));
                     Toast.makeText(cnt,"Deleted successfully",Toast.LENGTH_SHORT).show();
                     ((Activity)cnt).finish();
 

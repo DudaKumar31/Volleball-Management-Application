@@ -16,16 +16,11 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_margin="2dp"
+        android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="#000"
-            android:layout_margin="@dimen/_5sdp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+
 
         <ImageView
             android:id="@+id/iv_image_view"
@@ -33,15 +28,27 @@
             android:src="@drawable/volleyball"
             android:layout_margin="@dimen/_7sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_145sdp"/>
+            android:layout_height="@dimen/_135sdp"/>
 
         <TextView
-            android:id="@+id/tv_descriptiop"
+            android:id="@+id/tv_title"
             android:textSize="@dimen/_14sdp"
             android:textColor="#000"
-            android:layout_margin="@dimen/_5sdp"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+
+        <ImageView
+            android:id="@+id/im_delete"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:src="@drawable/ic_news_delete" />
+
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

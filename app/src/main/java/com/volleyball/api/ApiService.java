@@ -179,6 +179,10 @@ public interface ApiService {
     @GET("/Volleyball/gettestschedule.php?")
     Call<List<GetAllSchedulePojo>> getMatchResults();
 
+    @GET("/Volleyball/getschedulebyseason.php?")
+    Call<List<GetAllSchedulePojo>> getschedulebyseason(@Query("sid") String sid);
+
+
 
 
 }

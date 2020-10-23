@@ -8,6 +8,7 @@ import com.volleyball.models.GetAllSchedulePojo;
 import com.volleyball.models.GetAllSeasonsPojo;
 import com.volleyball.models.GetAllTeamsPojo;
 import com.volleyball.models.PlayerPojo;
+import com.volleyball.models.PlayerScoreModel;
 import com.volleyball.models.ResponseData;
 import com.volleyball.models.TeamsPojo;
 import com.volleyball.models.TmProfilePojo;
@@ -183,6 +184,8 @@ public interface ApiService {
     Call<List<GetAllSchedulePojo>> getschedulebyseason(@Query("sid") String sid);
 
 
+    @GET("/Volleyball/getPlayersScore.php")
+    Call<List<PlayerScoreModel>> getPlayersScore(@Query("sid") String sid, @Query("team_id") String team_id);
 
 
 }

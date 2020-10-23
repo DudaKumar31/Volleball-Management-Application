@@ -11,9 +11,9 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.volleyball.R;
 import com.volleyball.fragments.GuestMoreFragment;
-import com.volleyball.fragments.HomeFragment;
-import com.volleyball.fragments.MatchesFragment;
-import com.volleyball.fragments.NewsFragment;
+import com.volleyball.fragments.GuestHomeFragment;
+import com.volleyball.fragments.GuestMatchesFragment;
+import com.volleyball.fragments.GuestNewsFragment;
 
 public class UserDashBoardActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -34,13 +34,13 @@ public class UserDashBoardActivity extends AppCompatActivity {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
                             case R.id.item_home:
-                                selectedFragment = HomeFragment.homeFragment();
+                                selectedFragment = GuestHomeFragment.guestHomeFragment();
                                 break;
                             case R.id.item_matches:
-                                selectedFragment = MatchesFragment.matchesFragment();
+                                selectedFragment = GuestMatchesFragment.matchesFragment();
                                 break;
                             case R.id.item_news:
-                                selectedFragment = NewsFragment.newsFragment();
+                                selectedFragment = GuestNewsFragment.newsFragment();
                                 break;
                             case R.id.item_settings:
                                 selectedFragment = GuestMoreFragment.guestMoreFragment();
@@ -53,7 +53,7 @@ public class UserDashBoardActivity extends AppCompatActivity {
                     }
                 });
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, HomeFragment.homeFragment());
+        transaction.replace(R.id.frame_layout, GuestHomeFragment.guestHomeFragment());
         transaction.commit();
     }
 }

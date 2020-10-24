@@ -126,7 +126,7 @@ public class AllNewsAdapter extends BaseAdapter {
 
         AlertDialog.Builder builder1 = new AlertDialog.Builder(cnt);
         builder1.setTitle("Alert !!!");
-        builder1.setMessage("Do you want to Delete the Season.");  //message we want to show the end user
+        builder1.setMessage("Do you want to Delete the News.");  //message we want to show the end user
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(

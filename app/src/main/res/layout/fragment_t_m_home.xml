@@ -1,26 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:background="@drawable/bg"
-    android:layout_margin="0dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-
-
-
-    <Button
-        android:layout_margin="20dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Manage Team"
-        android:textSize="20dp"
-        android:background="#504d4d"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        />
+        android:id="@+id/list"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/team_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_4sdp"
+                android:adjustViewBounds="true"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:scaleType="fitXY" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_team_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="sans-serif-black" />
+
+
+
+            <Button
+                android:id="@+id/btn_add_player"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:drawableLeft="@drawable/ic_add"
+                android:paddingLeft="@dimen/_20sdp"
+                android:background="@drawable/button_rounded"
+                android:text="Add Player"
+                android:layout_marginTop="20dp"
+                android:textColor="#ffffff"
+                android:width="@dimen/_150sdp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <ListView
-        android:visibility="gone"
+        android:layout_below="@+id/list"
+        android:layout_marginTop="100dp"
+        android:visibility="visible"
         android:id="@+id/list_view"
         android:layout_margin="10dp"
         android:divider="@null"
@@ -28,4 +78,5 @@
         android:layout_height="wrap_content" >
     </ListView>
 
-</LinearLayout>
+
+</RelativeLayout>

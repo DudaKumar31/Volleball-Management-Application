@@ -61,6 +61,7 @@ public class GuestMoreFragment extends Fragment {
                 startActivity(new Intent(getActivity(), GuestAllPlayersActivity.class));
             }
         });
+
         card_rankings=(CardView)view.findViewById(R.id.card_rankings);
         card_rankings.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -221,5 +221,8 @@ public interface ApiService {
              @Query("totalscore") String totalscore);
 
 
+    @GET("/Volleyball/getplayerranking.php?")
+    Call<List<PlayerPojo>> getplayerranking();
+
 
 }

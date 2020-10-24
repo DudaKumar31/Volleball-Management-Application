@@ -62,6 +62,14 @@ public interface ApiService {
 
     );
 
+    @Multipart
+    @POST("Volleyball/addnews.php?")
+    Call<ResponseData> addnews(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+
+    );
+
 
     @GET("/Volleyball/getplayer.php?")
     Call<List<PlayerPojo>> getplayer();

@@ -19,7 +19,13 @@
         android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <TextView
+            android:id="@+id/tv_title"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 
         <ImageView
@@ -30,13 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_135sdp"/>
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+
 
 
         <ImageView

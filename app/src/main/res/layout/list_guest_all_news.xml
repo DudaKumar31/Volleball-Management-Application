@@ -20,7 +20,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
+        <TextView
+            android:id="@+id/tv_title"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <ImageView
             android:id="@+id/iv_image_view"
@@ -30,13 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_145sdp"/>
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="#000"
-            android:layout_margin="@dimen/_5sdp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+
 
 
     </LinearLayout>

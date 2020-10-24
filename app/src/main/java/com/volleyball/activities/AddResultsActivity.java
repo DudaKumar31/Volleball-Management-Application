@@ -36,10 +36,10 @@ public class AddResultsActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tv_team1_score=(TextView)findViewById(R.id.tv_team1_score);
-        tv_team1_score.setText(getIntent().getStringExtra("team1")+" Score");
+        tv_team1_score.setText(getIntent().getStringExtra("team1"));
 
         tv_team2_score=(TextView)findViewById(R.id.tv_team2_score);
-        tv_team2_score.setText(getIntent().getStringExtra("team2")+" Score");
+        tv_team2_score.setText(getIntent().getStringExtra("team2"));
 
         etTeam1Score=(EditText)findViewById(R.id.etTeam1Score);
         etTeam1Score.setText(getIntent().getStringExtra("team1_score"));

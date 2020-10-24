@@ -21,6 +21,7 @@ import com.volleyball.activities.LoginActivity;
 import com.volleyball.activities.TMEditProfileActivity;
 import com.volleyball.adapters.AllNewsAdapter;
 
+import com.volleyball.adapters.GuestAllNewsAdapter;
 import com.volleyball.api.ApiService;
 import com.volleyball.api.RetroClient;
 import com.volleyball.models.GetAllNewsPojo;
@@ -69,7 +70,7 @@ public class TMNewsFragment extends Fragment {
                 pd.dismiss();
                 if (response.isSuccessful()) {
                     List<GetAllNewsPojo> teams=response.body();
-                    list_view.setAdapter(new AllNewsAdapter(teams,getActivity()));
+                    list_view.setAdapter(new GuestAllNewsAdapter(teams,getActivity()));
                 }
             }
             @Override

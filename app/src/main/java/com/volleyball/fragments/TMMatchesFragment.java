@@ -53,7 +53,7 @@ public class TMMatchesFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Matches");
         schedulePojos= new ArrayList<>();
         loadAllMatches();
-
+        list_view=(ListView)view.findViewById(R.id.list_view);
 
         return view;
     }

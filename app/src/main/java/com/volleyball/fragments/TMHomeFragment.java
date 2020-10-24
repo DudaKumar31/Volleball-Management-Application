@@ -22,15 +22,24 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.volleyball.R;
 import com.volleyball.activities.LoginActivity;
 import com.volleyball.activities.TMEditProfileActivity;
 import com.volleyball.activities.TeamManagerAddPlayerActivity;
 import com.volleyball.activities.Utils;
+import com.volleyball.adapters.AllTeamPlayersAdapter;
+import com.volleyball.api.ApiService;
+import com.volleyball.api.RetroClient;
+import com.volleyball.models.PlayerPojo;
 
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TMHomeFragment extends Fragment {
     ProgressDialog progressDialog;
@@ -41,6 +50,7 @@ public class TMHomeFragment extends Fragment {
     ImageView team_logo;
     SharedPreferences sharedPreferences;
     ListView list_view;
+    List<PlayerPojo> a1;
 
     public static TMHomeFragment tmHomeFragment() {
         TMHomeFragment fragment = new TMHomeFragment();
@@ -82,10 +92,46 @@ public class TMHomeFragment extends Fragment {
                 //finish();
             }
         });
-
+        a1 = new ArrayList<>();
+        loadAllMyPlayers(session);
         return view;
 
     }
+    ProgressDialog pd;
+    int no_of_players=0;
+    private void loadAllMyPlayers(final String team_id) {
+        pd = new ProgressDialog(getActivity());
+        pd.setTitle("Please wait,Data is being loaded.");
+        pd.show();
+        ApiService api = RetroClient.getApiService();
+        Call<List<PlayerPojo>> call = api.getMyTeamPlayers(team_id);
+        call.enqueue(new Callback<List<PlayerPojo>>() {
+            @Override
+            public void onResponse(Call<List<PlayerPojo>> call, Response<List<PlayerPojo>> response) {
+                pd.dismiss();
+
+                if (response.body() == null) {
+                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                } else {
+                    a1 = response.body();
+                    if(a1.size()>0) {
+                        no_of_players = a1.size();
+
+                        Glide.with(getActivity()).load(a1.get(0).getT_logo()).into(team_logo);
+                        tv_team_name.setText(response.body().get(0).getT_name());
+                        list_view.setAdapter(new AllTeamPlayersAdapter(a1, getActivity()));
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<PlayerPojo>> call, Throwable t) {
+                pd.dismiss();
+            }
+        });
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

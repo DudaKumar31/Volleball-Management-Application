@@ -20,6 +20,7 @@ import com.volleyball.R;
 import com.volleyball.activities.LoginActivity;
 import com.volleyball.activities.TMEditProfileActivity;
 import com.volleyball.adapters.AllNewsAdapter;
+
 import com.volleyball.api.ApiService;
 import com.volleyball.api.RetroClient;
 import com.volleyball.models.GetAllNewsPojo;
@@ -33,11 +34,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TMNewsFragment extends Fragment {
+    View view;
     ListView list_view;
     ProgressDialog progressDialog;
     List<GetAllNewsPojo> al;
-    View view;
-
 
     public static TMNewsFragment tmNewsFragment() {
         TMNewsFragment fragment = new TMNewsFragment();
@@ -53,9 +53,9 @@ public class TMNewsFragment extends Fragment {
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("News");
         loadAllNews();
-
         return view;
     }
+
     ProgressDialog pd;
     private void loadAllNews(){
         pd = new ProgressDialog(getActivity());
@@ -78,6 +78,7 @@ public class TMNewsFragment extends Fragment {
             }
         });
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

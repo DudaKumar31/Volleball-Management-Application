@@ -140,6 +140,12 @@ public interface ApiService {
             @PartMap Map<String, String> partMap
 
     );
+    @GET("/Volleyball/getMyTeamPlayers.php?")
+    Call<List<PlayerPojo>> getMyTeamPlayers(
+            @Query("team_id") String team_id
+
+    );
+
     @GET("/Volleyball/getteamsformanagers.php")
     Call<List<TeamsPojo>> getavailableteamsspinner();
 

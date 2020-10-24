@@ -15,6 +15,25 @@ public class PlayerPojo {
 
     @SerializedName("team_id")
     private String team_id;
+    public String getT_name() {
+        return t_name;
+    }
+    public void setT_name(String t_name) {
+        this.t_name = t_name;
+    }
+    public String getT_logo() {
+        return t_logo;
+    }
+
+    public void setT_logo(String t_logo) {
+        this.t_logo = t_logo;
+    }
+
+    @SerializedName("t_name")
+    private String t_name;
+
+    @SerializedName("t_logo")
+    private String t_logo;
 
     public String getP_name() {
         return p_name;

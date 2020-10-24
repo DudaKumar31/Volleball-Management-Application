@@ -48,6 +48,14 @@ public interface ApiService {
     );
 
     @Multipart
+    @POST("Volleyball/editplayer.php")
+    Call<ResponseData> editplayer(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap
+
+    );
+
+    @Multipart
     @POST("Volleyball/editseason.php")
     Call<ResponseData> editseason(
             @Part MultipartBody.Part file,

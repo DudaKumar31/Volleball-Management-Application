@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.EditPlayerActivity">
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"/>
+
+    <TextView
+        android:text="Player Name"
+        android:textSize="16dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textColor="#111111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/et_player_name"
+        android:hint="Player Name"
+        android:singleLine="true"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/edit_text_rounded"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+
+    <Button
+        android:id="@+id/btn_update"
+        android:text="Update"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:background="@drawable/button1_rounded" />
+
+</LinearLayout>

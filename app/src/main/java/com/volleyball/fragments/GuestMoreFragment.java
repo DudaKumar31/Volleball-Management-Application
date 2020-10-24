@@ -15,9 +15,12 @@ import androidx.fragment.app.Fragment;
 
 import com.volleyball.R;
 import com.volleyball.activities.GetAllSeasonsActivity;
+import com.volleyball.activities.GuestAllPlayersActivity;
+import com.volleyball.activities.GuestAllTeamsActivity;
+import com.volleyball.activities.GuestRankingsActivity;
 
 public class GuestMoreFragment extends Fragment {
-    CardView card_browse_team,card_season;
+    CardView card_browse_team,card_season,card_browse_player,card_rankings;
     View view;
 
 
@@ -47,9 +50,26 @@ public class GuestMoreFragment extends Fragment {
         card_browse_team.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"Coming soon",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getActivity(), GuestAllTeamsActivity.class));
             }
         });
+
+        card_browse_player=(CardView)view.findViewById(R.id.card_browse_player);
+        card_browse_player.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), GuestAllPlayersActivity.class));
+            }
+        });
+        card_rankings=(CardView)view.findViewById(R.id.card_rankings);
+        card_rankings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), GuestRankingsActivity.class));
+
+            }
+        });
+
 
         return view;
     }

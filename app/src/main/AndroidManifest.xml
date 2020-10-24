@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.EditPlayerByManagerActivity"></activity>
+        <activity android:name=".activities.GuestRankingsActivity"></activity>
+        <activity android:name=".activities.GuestAllPlayersActivity" />
+        <activity android:name=".activities.GuestAllTeamsActivity" />
+        <activity android:name=".activities.EditPlayerByManagerActivity" />
         <activity android:name=".activities.TeamManagerAddPlayerActivity" />
         <activity android:name=".activities.SchedulebySeasonActivity" />
         <activity android:name=".activities.AddPlayersScoreActivity" />

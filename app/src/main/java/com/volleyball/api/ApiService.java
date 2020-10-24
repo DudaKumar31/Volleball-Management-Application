@@ -201,5 +201,17 @@ public interface ApiService {
     @GET("/Volleyball/getPlayersScore.php")
     Call<List<PlayerScoreModel>> getPlayersScore(@Query("sid") String sid, @Query("team_id") String team_id);
 
+    @GET("/Volleyball/getPlayersByTeam.php")
+    Call<List<PlayerPojo>> getPlayersByTeam(@Query("team_id") String team_id);
+
+    @GET("/Volleyball/addPlayerScore.php")
+    Call<ResponseData> addPlayerScore
+            (@Query("sid") String sid,
+             @Query("p_name") String p_name,
+             @Query("score") String score,
+             @Query("team_id") String team_id,
+             @Query("totalscore") String totalscore);
+
+
 
 }

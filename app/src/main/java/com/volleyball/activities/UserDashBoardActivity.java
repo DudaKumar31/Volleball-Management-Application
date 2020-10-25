@@ -40,7 +40,7 @@ public class UserDashBoardActivity extends AppCompatActivity {
                                 selectedFragment = GuestMatchesFragment.guestMatchesFragment();
                                 break;
                             case R.id.item_news:
-                                selectedFragment = GuestNewsFragment.newsFragment();
+                                selectedFragment = GuestNewsFragment.guestNewsFragment();
                                 break;
                             case R.id.item_settings:
                                 selectedFragment = GuestMoreFragment.guestMoreFragment();

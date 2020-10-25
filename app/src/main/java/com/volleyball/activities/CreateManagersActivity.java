@@ -178,6 +178,7 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                startActivity(new Intent(this,AllManagersActivity.class));
                 this.finish();
                 return true;
             default:

@@ -35,6 +35,11 @@ public class AllScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_schedule);
+
+        getSupportActionBar().setTitle("Schedule Matches");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btn_add_Schedule=(Button)findViewById(R.id.btn_add_Schedule);
         btn_add_Schedule.setOnClickListener(new View.OnClickListener() {
             @Override

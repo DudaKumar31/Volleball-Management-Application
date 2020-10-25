@@ -134,10 +134,11 @@
     <Button
         android:id="@+id/btn_guest"
         android:text="Guest User"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_18sdp"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_10sdp"
         android:textAllCaps="false"
+        android:textStyle="bold"
         android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_38sdp"

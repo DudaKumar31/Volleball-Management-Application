@@ -161,6 +161,7 @@ public class CreateSeasonsActivity extends AppCompatActivity implements EasyPerm
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                startActivity(new Intent(this,AllSeasonsActivity.class));
                 this.finish();
                 return true;
             default:

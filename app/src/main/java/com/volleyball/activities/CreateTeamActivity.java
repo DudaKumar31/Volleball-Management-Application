@@ -157,6 +157,7 @@ public class CreateTeamActivity extends AppCompatActivity implements EasyPermiss
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                startActivity(new Intent(this,AllTeamsActivity.class));
                 this.finish();
                 return true;
             default:

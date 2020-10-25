@@ -157,6 +157,7 @@ public class AddNewsActivity extends AppCompatActivity implements EasyPermission
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                startActivity(new Intent(this,AllNewsActivity.class));
                 this.finish();
                 return true;
             default:

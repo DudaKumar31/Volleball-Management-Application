@@ -55,8 +55,6 @@ public class LoginActivity extends AppCompatActivity {
         spin_drop_down.setAdapter(adapter);
 
         tv_sign_in=(TextView)findViewById(R.id.tv_sign_in);
-        tv_forgot_pass=(TextView)findViewById(R.id.tv_forgot_pass);
-
 
         et_uname=(TextInputEditText)findViewById(R.id.et_uname);
         et_pwd=(TextInputEditText)findViewById(R.id.et_pwd);

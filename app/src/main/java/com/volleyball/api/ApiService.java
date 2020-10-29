@@ -10,6 +10,7 @@ import com.volleyball.models.GetAllTeamsPojo;
 import com.volleyball.models.PlayerPojo;
 import com.volleyball.models.PlayerScoreModel;
 import com.volleyball.models.ResponseData;
+import com.volleyball.models.TeamsCountPojo;
 import com.volleyball.models.TeamsPojo;
 import com.volleyball.models.TmProfilePojo;
 
@@ -114,6 +115,7 @@ public interface ApiService {
             @PartMap Map<String, String> partMap
 
     );
+
     @Multipart
     @POST("Volleyball/addingmanager.php?")
     Call<ResponseData> addingmanager(
@@ -130,6 +132,10 @@ public interface ApiService {
 
     @GET("/Volleyball/getmanagers.php?")
     Call<List<GetAllManagersPojo>> getmanagers();
+
+    @GET("/Volleyball/getteamcount.php")
+    Call<List<TeamsCountPojo>> getteamcount();
+
 
     @GET("/Volleyball/deletemanager.php?")
     Call<ResponseData> deletemanager(

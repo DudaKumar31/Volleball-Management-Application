@@ -25,6 +25,7 @@ import com.volleyball.R;
 import com.volleyball.api.ApiService;
 import com.volleyball.api.RetroClient;
 import com.volleyball.models.ResponseData;
+import com.volleyball.models.TeamsCountPojo;
 import com.volleyball.models.TeamsPojo;
 
 import java.io.File;
@@ -54,9 +55,10 @@ public class AddPlayerActivity extends AppCompatActivity implements EasyPermissi
     Button btn_season_img,btn_Submit;
     ProgressDialog pd;
     Spinner spin_teams;
-    List<TeamsPojo> a2;
+    List<TeamsCountPojo> a2;
     String[] teams;
     String[] ids;
+    int[] teamscount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,14 @@ public class AddPlayerActivity extends AppCompatActivity implements EasyPermissi
         btn_Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // uploadImageToServer();
+                if(teamscount[spin_teams.getSelectedItemPosition()]>=6){
+                    //uploadImageToServer();
+                    Toast.makeText(AddPlayerActivity.this, "Team is already full", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    uploadImageToServer();
+                }
+
 
             }
         });
@@ -167,19 +176,25 @@ public class AddPlayerActivity extends AppCompatActivity implements EasyPermissi
     }
     private void getTeams() {
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<List<TeamsPojo>> call = apiService.getteamsspinner();
-        call.enqueue(new Callback<List<TeamsPojo>>() {
+        Call<List<TeamsCountPojo>> call = apiService.getteamcount();
+        call.enqueue(new Callback<List<TeamsCountPojo>>() {
             @Override
-            public void onResponse(Call<List<TeamsPojo>> call, Response<List<TeamsPojo>> response) {
+            public void onResponse(Call<List<TeamsCountPojo>> call, Response<List<TeamsCountPojo>> response) {
                 a2 = response.body();
                 Log.d("TAG", "Response = " + a2);
                 teams = new String[a2.size() + 1];
                 ids = new String[a2.size() + 1];
+                teamscount = new int[a2.size() + 1];
+
                 teams[0] = "Select Teams";
                 ids[0] = "-1";
+                teamscount[0] = -1;
+
                 for (int i = 0; i < a2.size(); i++) {
                     teams[i + 1] = a2.get(i).getT_name();
+
                     ids[i + 1] = a2.get(i).getTeam_id();
+                    teamscount[i + 1] = Integer.parseInt(a2.get(i).getTeam_count());
                 }
                 ArrayAdapter aa = new ArrayAdapter(AddPlayerActivity.this, android.R.layout.simple_spinner_item, teams);
                 aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -189,6 +204,7 @@ public class AddPlayerActivity extends AppCompatActivity implements EasyPermissi
                     public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
                         if (pos > 0) {
                             // Toast.makeText(getApplicationContext(), cities[pos], Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), ""+teamscount[pos], Toast.LENGTH_LONG).show();
                             //getAreas(state,cities[pos]);
                         }
                     }
@@ -199,7 +215,7 @@ public class AddPlayerActivity extends AppCompatActivity implements EasyPermissi
                 });
             }
             @Override
-            public void onFailure(Call<List<TeamsPojo>> call, Throwable t) {
+            public void onFailure(Call<List<TeamsCountPojo>> call, Throwable t) {
                 Log.d("TAG", "Response = " + t.toString());
             }
         });

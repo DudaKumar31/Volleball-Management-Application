@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -44,6 +45,25 @@ public class TeamScoreDetailsActivity extends AppCompatActivity {
 
         ImageView team_b_logo=(ImageView)findViewById(R.id.team_b_logo);
         Glide.with(getApplicationContext()).load(getIntent().getStringExtra("t2logo")).into(team_b_logo);
+        team_a_logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(TeamScoreDetailsActivity.this, GetAllPlayersActivity.class);
+                intent.putExtra("team_id",getIntent().getStringExtra("t1id"));
+                startActivity(intent);
+
+            }
+        });
+
+        team_b_logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(TeamScoreDetailsActivity.this, GetAllPlayersActivity.class);
+                intent.putExtra("team_id",getIntent().getStringExtra("t2id"));
+                startActivity(intent);
+
+            }
+        });
 
 
         TextView team1_score=(TextView)findViewById(R.id.team1_score);

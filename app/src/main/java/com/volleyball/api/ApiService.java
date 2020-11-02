@@ -217,6 +217,12 @@ public interface ApiService {
 
     @GET("/Volleyball/getPlayersByTeam.php")
     Call<List<PlayerPojo>> getPlayersByTeam(@Query("team_id") String team_id);
+    @GET("Volleyball/addfeedback.php?")
+    Call<ResponseData> addfeedback(
+            @Query("email") String email,
+            @Query("sub") String sub,
+            @Query("msg") String msg
+    );
 
     @GET("/Volleyball/addPlayerScore.php")
     Call<ResponseData> addPlayerScore

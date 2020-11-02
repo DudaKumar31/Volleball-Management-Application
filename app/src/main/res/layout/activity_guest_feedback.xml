@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent">
+
+
+
+
+    <TextView
+        android:id="@+id/tv_first_name"
+        android:text="Nameame"
+        android:textSize="16dp"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textColor="#111111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/et_name"
+        android:hint="Name"
+        android:visibility="gone"
+        android:singleLine="true"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/edit_text_rounded"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:text="Email Id"
+        android:textSize="16dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textColor="#111111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/et_email_id"
+        android:hint="Email Id"
+        android:singleLine="true"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/edit_text_rounded"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+    <TextView
+        android:text="Subject"
+        android:textSize="16dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textColor="#111111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/et_subject"
+        android:hint="Subject"
+        android:singleLine="true"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/edit_text_rounded"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+    <TextView
+        android:text="Feedback"
+        android:textSize="16dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textColor="#111111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/et_feedback"
+        android:hint="Feedback"
+        android:lines="7"
+        android:gravity="start"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/edit_text_rounded"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:text="Send Feedback"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button1_rounded"
+        android:layout_width="@dimen/_145sdp"
+        android:layout_height="@dimen/_35sdp" />
+
+</LinearLayout>

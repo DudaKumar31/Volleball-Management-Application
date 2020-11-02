@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.GetAllPlayersActivity"></activity>
+        <activity android:name=".activities.GuestFeedbackActivity"></activity>
+        <activity android:name=".activities.GetAllPlayersActivity" />
         <activity android:name=".activities.GuestRankingsActivity" />
         <activity android:name=".activities.GuestAllPlayersActivity" />
         <activity android:name=".activities.GuestAllTeamsActivity" />

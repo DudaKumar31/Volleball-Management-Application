@@ -1,9 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.FinalResultActivity">
+    android:layout_height="match_parent" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:text="Select Season"
+            android:textSize="16dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:textColor="#111111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <Spinner
+            android:id="@+id/spin_selectseason"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/edit_text_rounded"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:spinnerMode="dropdown"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:text="Team"
+                android:id="@+id/tvTSNO"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Lost"
+                android:id="@+id/tvTLoss"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tvTLoss"
+                android:text="Won"
+                android:id="@+id/tvTWin"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tvTWin"
+                android:text="Total Played"
+                android:id="@+id/tvTPlayedMatches"
+                />
+            <View
+                android:layout_below="@id/tvTSNO"
+                android:background="#F00"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </RelativeLayout>
+
+
+        <ListView
+
+            android:id="@+id/list_view"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+

@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.volleyball.R;
+import com.volleyball.activities.FinalResultActivity;
 import com.volleyball.activities.GetAllSeasonsActivity;
 import com.volleyball.activities.GuestAllPlayersActivity;
 import com.volleyball.activities.GuestAllTeamsActivity;
@@ -21,7 +22,7 @@ import com.volleyball.activities.GuestFeedbackActivity;
 import com.volleyball.activities.GuestRankingsActivity;
 
 public class GuestMoreFragment extends Fragment {
-    CardView card_browse_team,card_season,card_browse_player,card_feedback,card_rankings;
+    CardView card_browse_team,card_season,card_browse_player,card_feedback,card_rankings,card_result;
     View view;
 
 
@@ -76,11 +77,18 @@ public class GuestMoreFragment extends Fragment {
         card_feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getActivity(), GuestFeedbackActivity.class));
+
             }
         });
 
+        card_result=(CardView)view.findViewById(R.id.card_result);
+        card_result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), FinalResultActivity.class));
+            }
+        });
 
 
         return view;

@@ -20,9 +20,10 @@ import com.volleyball.activities.GuestAllPlayersActivity;
 import com.volleyball.activities.GuestAllTeamsActivity;
 import com.volleyball.activities.GuestFeedbackActivity;
 import com.volleyball.activities.GuestRankingsActivity;
+import com.volleyball.activities.LoginActivity;
 
 public class GuestMoreFragment extends Fragment {
-    CardView card_browse_team,card_season,card_browse_player,card_feedback,card_rankings,card_result;
+    CardView card_browse_team,card_season,card_browse_player,card_feedback,card_rankings,card_result,cd_logout;
     View view;
 
 
@@ -87,6 +88,14 @@ public class GuestMoreFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), FinalResultActivity.class));
+            }
+        });
+
+        cd_logout=(CardView)view.findViewById(R.id.cd_logout);
+        cd_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
 

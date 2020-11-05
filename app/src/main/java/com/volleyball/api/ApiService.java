@@ -236,5 +236,10 @@ public interface ApiService {
     @GET("/Volleyball/getplayerranking.php?")
     Call<List<PlayerPojo>> getplayerranking();
 
+    @GET("Volleyball/changeteamname.php")
+    Call<ResponseData> changeteamname(
+            @Query("team_name") String team_name,
+            @Query("id") String id);
+
 
 }

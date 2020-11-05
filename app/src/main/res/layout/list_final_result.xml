@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:text="Team"
+            android:id="@+id/tvTSNO"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Lost"
+            android:id="@+id/tvTLoss"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tvTLoss"
+            android:text="Won"
+            android:id="@+id/tvTWin"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tvTWin"
+            android:text="Played"
+            android:id="@+id/tvTPlayedMatches"
+            />
+        <View
+            android:layout_below="@id/tvTSNO"
+            android:background="#F00"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+    </RelativeLayout>
+    <!-- List View Here-->
+
+    <!-- Child Row Start-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:visibility="gone"
+            android:id="@+id/tvSNO"
+            />
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_toRightOf="@id/tvSNO"
+            android:layout_width="35dp"
+            android:background="@drawable/ic_image"
+            android:layout_height="35dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:layout_toRightOf="@id/ivLogo"
+            android:layout_height="wrap_content"
+            android:text="RCB"
+            android:id="@+id/tvTeamName"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="1"
+            android:id="@+id/tvLoss"
+            />
+
+        <TextView
+            android:id="@+id/tvWin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginRight="26dp"
+            android:layout_toLeftOf="@id/tvLoss"
+            android:padding="8dp"
+            android:text="3" />
+
+        <TextView
+            android:id="@+id/tvPlayedMatches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="26dp"
+            android:layout_toLeftOf="@id/tvWin"
+            android:padding="8dp"
+            android:text="5" />
+
+        <View
+            android:layout_below="@id/tvSNO"
+            android:background="#F00"
+            android:visibility="gone"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.volleyball.api;
 
 
 
+import com.volleyball.models.FinalResultPojo;
 import com.volleyball.models.GetAllManagersPojo;
 import com.volleyball.models.GetAllNewsPojo;
 import com.volleyball.models.GetAllSchedulePojo;
@@ -210,6 +211,10 @@ public interface ApiService {
 
     @GET("/Volleyball/getschedulebyseason.php?")
     Call<List<GetAllSchedulePojo>> getschedulebyseason(@Query("sid") String sid);
+
+    @GET("/Volleyball/getResultsBySeason.php?")
+    Call<List<FinalResultPojo>> getResultsBySeason(@Query("season") String season
+    );
 
 
     @GET("/Volleyball/getPlayersScore.php")

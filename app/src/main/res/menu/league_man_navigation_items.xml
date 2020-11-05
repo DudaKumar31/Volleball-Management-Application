@@ -12,5 +12,9 @@
         android:id="@+id/item_news"
         android:icon="@drawable/ic_news"
         android:title="News"/>
+    <item
+        android:id="@+id/item_more"
+        android:icon="@drawable/ic_more"
+        android:title="More"/>
 
 </menu>

@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.volleyball.R;
 import com.volleyball.fragments.LMHomeFragment;
 import com.volleyball.fragments.LMMatchesFragment;
+import com.volleyball.fragments.LMMoreFragment;
 import com.volleyball.fragments.LMNewsFragment;
 
 public class LeagueManagerDashBoardActivity extends AppCompatActivity {
@@ -40,6 +41,9 @@ public class LeagueManagerDashBoardActivity extends AppCompatActivity {
                                 break;
                             case R.id.item_news:
                                 selectedFragment = LMNewsFragment.newsFragment();
+                                break;
+                            case R.id.item_more:
+                                selectedFragment = LMMoreFragment.lmMoreFragment();
                                 break;
 
                         }

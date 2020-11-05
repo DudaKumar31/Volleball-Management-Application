@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.volleyball.R;
+import com.volleyball.activities.EditTeamNameActivity;
 import com.volleyball.activities.LoginActivity;
 import com.volleyball.activities.TMEditProfileActivity;
 import com.volleyball.activities.TeamManagerAddPlayerActivity;
@@ -119,6 +120,7 @@ public class TMHomeFragment extends Fragment {
 
                         Glide.with(getActivity()).load(a1.get(0).getT_logo()).into(team_logo);
                         tv_team_name.setText(response.body().get(0).getT_name());
+                        editteammanager(a1.get(0).getT_logo(),response.body().get(0).getT_name());
                         list_view.setAdapter(new AllTeamPlayersAdapter(a1, getActivity()));
                     }
                 }
@@ -164,4 +166,19 @@ public class TMHomeFragment extends Fragment {
         }
     }
 
+
+    public void editteammanager(final String image,final String teamname){
+        team_logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(), EditTeamNameActivity.class);
+                intent.putExtra("team_id",session);
+                intent.putExtra("image",image);
+                intent.putExtra("team_name",teamname);
+                startActivity(intent);
+            }
+        });
+    }
+
 }
+

@@ -2,6 +2,7 @@ package com.volleyball.api;
 
 
 
+import com.volleyball.models.FeedbackPojo;
 import com.volleyball.models.FinalResultPojo;
 import com.volleyball.models.GetAllManagersPojo;
 import com.volleyball.models.GetAllNewsPojo;
@@ -95,6 +96,9 @@ public interface ApiService {
 
     @GET("/Volleyball/getteams.php")
     Call<List<TeamsPojo>> getteamsspinner();
+
+    @GET("/Volleyball/getfeedback.php?")
+    Call<List<FeedbackPojo>> getfeedback();
 
 
     @GET("/Volleyball/deleteseason.php?")

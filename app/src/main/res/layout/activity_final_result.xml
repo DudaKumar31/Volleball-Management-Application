@@ -6,17 +6,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:background="@drawable/bg">
 
         <TextView
-            android:text="Select Season"
-            android:textSize="16dp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:textColor="#111111"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Select Season"
+            android:textStyle="bold"
+            android:textColor="#100000"
+            android:textSize="16dp" />
 
 
         <Spinner
@@ -33,39 +35,45 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="8dp"
-                android:layout_height="wrap_content"
-                android:text="Team"
-                android:id="@+id/tvTSNO"
-                />
 
             <TextView
+                android:id="@+id/tvTSNO"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:padding="8dp"
+                android:text="Team"
+                android:textColor="#130101"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTLoss"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:padding="8dp"
                 android:text="Lost"
-                android:id="@+id/tvTLoss"
-                />
+                android:textColor="#0C0000"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvTWin"
                 android:layout_width="wrap_content"
-                android:padding="8dp"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/tvTLoss"
-                android:text="Won"
-                android:id="@+id/tvTWin"
-                />
-            <TextView
-                android:layout_width="wrap_content"
                 android:padding="8dp"
+                android:text="Won"
+                android:textColor="#0E0101"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTPlayedMatches"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/tvTWin"
+                android:padding="8dp"
                 android:text="Total Played"
-                android:id="@+id/tvTPlayedMatches"
-                />
+                android:textColor="#0B0000"
+                android:textStyle="bold" />
             <View
                 android:layout_below="@id/tvTSNO"
                 android:background="#F00"

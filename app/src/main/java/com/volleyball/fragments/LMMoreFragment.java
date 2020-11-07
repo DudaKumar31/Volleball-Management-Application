@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.volleyball.R;
+import com.volleyball.activities.AboutUsActivity;
 import com.volleyball.activities.FinalResultActivity;
 import com.volleyball.activities.GetAllSeasonsActivity;
 import com.volleyball.activities.GuestAllPlayersActivity;
@@ -68,7 +69,7 @@ public class LMMoreFragment extends Fragment {
         card_about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), AboutUsActivity.class));
             }
         });
 

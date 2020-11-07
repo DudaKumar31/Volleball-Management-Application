@@ -47,7 +47,7 @@ public class FinalResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_result);
 
-        getSupportActionBar().setTitle("Result");
+        getSupportActionBar().setTitle("Results");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         loadallSeasons();

@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.volleyball.R;
+import com.volleyball.activities.AboutUsActivity;
 import com.volleyball.activities.FinalResultActivity;
 import com.volleyball.activities.GetAllSeasonsActivity;
 import com.volleyball.activities.GuestAllPlayersActivity;
@@ -23,7 +24,7 @@ import com.volleyball.activities.GuestRankingsActivity;
 import com.volleyball.activities.LoginActivity;
 
 public class GuestMoreFragment extends Fragment {
-    CardView card_browse_team,card_season,card_browse_player,card_feedback,card_rankings,card_result,cd_logout;
+    CardView card_browse_team,card_season,card_browse_player,card_feedback,card_rankings,card_result,card_aboutus,cd_logout;
     View view;
 
 
@@ -88,6 +89,14 @@ public class GuestMoreFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), FinalResultActivity.class));
+            }
+        });
+
+        card_aboutus=(CardView)view.findViewById(R.id.card_about_us);
+        card_aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AboutUsActivity.class));
             }
         });
 

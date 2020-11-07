@@ -1,8 +1,5 @@
 package com.volleyball.activities;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +14,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.textfield.TextInputEditText;
+import com.volleyball.MainActivity;
 import com.volleyball.R;
 import com.volleyball.api.ApiService;
 import com.volleyball.api.RetroClient;
@@ -28,11 +29,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView tv_sign_in,tv_forgot_pass;
+    TextView tv_sign_in,tv_forgot_pass,tv_new_member;
     Button btn_login,btn_guest;
     TextInputEditText et_uname,et_pwd;
     ProgressDialog pd;
-    String[] Role;
+    String[] COUNTRIES;
     AutoCompleteTextView spin_drop_down;
 
     @Override
@@ -41,23 +42,22 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
-        Role = new String[] {"League Manager", "Team Manager"};
+        COUNTRIES = new String[] {"League Manager", "Team Manager"};
         spin_drop_down = findViewById(R.id.spin_drop_down);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplication(), R.layout.dropdown_menu_popup_item, Role);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplication(), R.layout.dropdown_menu_popup_item, COUNTRIES);
         spin_drop_down.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(LoginActivity.this, ""+spin_drop_down.getText().toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this, ""+spin_drop_down.getText().toString(), Toast.LENGTH_SHORT).show();
 
             }
         });
 
         spin_drop_down.setAdapter(adapter);
 
-        tv_sign_in=(TextView)findViewById(R.id.tv_sign_in);
-
         et_uname=(TextInputEditText)findViewById(R.id.et_uname);
         et_pwd=(TextInputEditText)findViewById(R.id.et_pwd);
+
         btn_login=(Button)findViewById(R.id.btn_login);
         btn_guest=(Button)findViewById(R.id.btn_guest);
         btn_guest.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +81,11 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);*/
                     leagueManagerloginData();
                 }
-
+                else if (spin_drop_down.getText().toString().equals("User")) {
+                    Intent intent=new Intent(LoginActivity.this, UserDashBoardActivity.class);
+                    startActivity(intent);
+                    //leagueManagerloginData();
+                }
                 else{
                     Toast.makeText(LoginActivity.this, "Please choose Logintype", Toast.LENGTH_SHORT).show();
                 }
@@ -91,17 +95,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        /*Typeface custom_font = Typeface.createFromAsset(LoginActivity.this.getAssets(), "fonts/Lato-Medium.ttf");
-        tv_sign_in.setTypeface(custom_font);
-        tv_forgot_pass.setTypeface(custom_font);
-        btn_login.setTypeface(custom_font);
-        tv_terms_cond.setTypeface(custom_font);*/
-
-
     }
     public  void leagueManagerloginData() {
         pd= new ProgressDialog(LoginActivity.this);
-        pd.setTitle("Please wait, data is being submit...");
+        pd.setTitle("Please wait,Data is being submit...");
         pd.show();
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
         Call<ResponseData> call = apiService.adminLogin(et_uname.getText().toString(),et_pwd.getText().toString());
@@ -141,9 +138,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 if (response.body().status.equals("true")) {
+
+                    ResponseData r=response.body();
                     SharedPreferences sharedPreferences = getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
                     SharedPreferences.Editor et=sharedPreferences.edit();
                     et.putString("uname",et_uname.getText().toString());
+                    et.putString("team_id",r.team_id);
                     et.commit();
                     Toast.makeText(LoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(LoginActivity.this, TeamManagerDashBoardActivity.class));

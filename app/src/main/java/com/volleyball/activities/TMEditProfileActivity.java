@@ -99,6 +99,7 @@ public class TMEditProfileActivity extends AppCompatActivity implements EasyPerm
                 et_pwd.setText(user.getPassword());
                 et_email.setText(user.getEmail());
                 Glide.with(TMEditProfileActivity.this).load(user.getPhoto()).into(image_view);
+                Toast.makeText(TMEditProfileActivity.this, ""+user.getTeam_id(), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -175,11 +176,9 @@ public class TMEditProfileActivity extends AppCompatActivity implements EasyPerm
         pd.show();
         Map<String, String> map = new HashMap<>();
         map.put("name",et_name.getText().toString());
-        map.put("phno",et_phno.getText().toString());
+        map.put("phone",et_phno.getText().toString());
         map.put("email",et_email.getText().toString());
         map.put("password",et_pwd.getText().toString());
-
-
 
         RequestBody mFile = RequestBody.create(MediaType.parse("image/*"), file);
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), mFile);

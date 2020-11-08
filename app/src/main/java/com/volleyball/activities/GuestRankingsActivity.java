@@ -35,7 +35,7 @@ public class GuestRankingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest_rankings);
 
-        getSupportActionBar().setTitle("Top Players");
+        getSupportActionBar().setTitle("Player Rankings");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

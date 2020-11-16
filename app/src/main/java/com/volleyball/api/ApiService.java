@@ -205,7 +205,9 @@ public interface ApiService {
             @Query("s_id") String s_id,
             @Query("team1_score") String team1_score,
             @Query("team2_score") String team2_score,
-            @Query("result") String result);
+            @Query("result") String result,
+            @Query("team_win") String team_win,
+            @Query("team_lost") String team_lost);
 
     @GET("/Volleyball/getteams.php")
     Call<List<TeamsPojo>> getmatchteams();

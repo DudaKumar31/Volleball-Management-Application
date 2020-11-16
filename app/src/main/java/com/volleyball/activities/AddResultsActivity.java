@@ -27,7 +27,7 @@ public class AddResultsActivity extends AppCompatActivity {
     EditText etTeam1Score,etTeam2Score,etResult;
     Button btnAddResult,btnTeam1,btnTeam2,btnresultget;
     int t1score,t2score;
-    String r;
+    String r,win_team_id,lose_team_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,13 +49,7 @@ public class AddResultsActivity extends AppCompatActivity {
         etResult=(EditText)findViewById(R.id.etResult);
         etResult.setText(getIntent().getStringExtra("result"));
 
-        btnAddResult=(Button)findViewById(R.id.btnAddResult);
-        btnAddResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addScore();
-            }
-        });
+
 
         btnresultget=(Button)findViewById(R.id.btnresultget);
         btnresultget.setOnClickListener(new View.OnClickListener() {
@@ -71,13 +65,15 @@ public class AddResultsActivity extends AppCompatActivity {
                 {
                     r=String.valueOf(t1score-t2score);
                     etResult.setText(tv_team1_score.getText().toString() + " Won By " + r + "Points");
-
+                    win_team_id=getIntent().getStringExtra("team1_id");
+                    lose_team_id=getIntent().getStringExtra("team2_id");
                 }
                 else if(t1score<t2score)
                 {
                     r=String.valueOf(t2score-t1score);
                     etResult.setText(tv_team2_score.getText().toString() + " Won By " + r + "Points");
-
+                    win_team_id=getIntent().getStringExtra("team2_id");
+                    lose_team_id=getIntent().getStringExtra("team1_id");
                 }
 
                 else
@@ -85,6 +81,16 @@ public class AddResultsActivity extends AppCompatActivity {
                     etResult.setText("Match Tied");
                 }
 
+            }
+        });
+
+        btnAddResult=(Button)findViewById(R.id.btnAddResult);
+        btnAddResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AddResultsActivity.this, ""+lose_team_id+""+lose_team_id, Toast.LENGTH_SHORT).show();
+
+                addScore();
             }
         });
 
@@ -120,7 +126,7 @@ public class AddResultsActivity extends AppCompatActivity {
         pd.setTitle("Please wait,Data is being submitted.");
         pd.show();
         ApiService api = RetroClient.getApiService();
-        Call<ResponseData> call = api.addTeamResultScore(getIntent().getStringExtra("sid"),etTeam1Score.getText().toString(),etTeam2Score.getText().toString(),etResult.getText().toString());
+        Call<ResponseData> call = api.addTeamResultScore(getIntent().getStringExtra("sid"),etTeam1Score.getText().toString(),etTeam2Score.getText().toString(),etResult.getText().toString(),win_team_id,lose_team_id);
         call.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
@@ -148,6 +154,7 @@ public class AddResultsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                startActivity(new Intent(AddResultsActivity.this,AllScheduleActivity.class));
                 this.finish();
                 return true;
             default:

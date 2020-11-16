@@ -112,7 +112,7 @@ public class AddScheduleActivity extends AppCompatActivity {
                     ResponseData rm=response.body();
                     if(rm.status.equals("true")){
                         Toast.makeText(AddScheduleActivity.this,rm.message,Toast.LENGTH_SHORT).show();
-
+                        startActivity(new Intent(AddScheduleActivity.this,AllScheduleActivity.class));
                         finish();
                     }else{
                         Toast.makeText(AddScheduleActivity.this,rm.message,Toast.LENGTH_SHORT).show();
@@ -208,6 +208,7 @@ public class AddScheduleActivity extends AppCompatActivity {
                             ArrayList<String> addseasons = new ArrayList<String>();
                             final ArrayList<String> getseasonsID = new ArrayList<String>();
                             addseasons.add("Select Season");
+                            getseasonsID.add("-1");
                             for (int i = 0; i < seasons.size(); i++) {
                                 addseasons.add(seasons.get(i).getS_name());
                                 getseasonsID.add(seasons.get(i).getId());

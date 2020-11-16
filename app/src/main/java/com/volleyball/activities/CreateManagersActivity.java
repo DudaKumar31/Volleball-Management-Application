@@ -87,7 +87,28 @@ public class CreateManagersActivity extends AppCompatActivity implements EasyPer
         btn_Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadManagerToServer();
+                if (spin_teams.getSelectedItem().toString().contains("Select Teams")) {
+                    Toast.makeText(CreateManagersActivity.this, "Please Select team", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (et_name.getText().toString().isEmpty()) {
+                    Toast.makeText(CreateManagersActivity.this, "Please enter name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (et_email.getText().toString().isEmpty()) {
+                    Toast.makeText(CreateManagersActivity.this, "Please enter email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (et_phno.getText().toString().isEmpty()) {
+                    Toast.makeText(CreateManagersActivity.this, "Please enter phone", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (et_pwd.getText().toString().isEmpty()) {
+                    Toast.makeText(CreateManagersActivity.this, "Please enter password", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    uploadManagerToServer();
+                }
             }
         });
 
